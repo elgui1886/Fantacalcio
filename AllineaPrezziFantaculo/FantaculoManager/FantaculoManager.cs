@@ -68,8 +68,8 @@ namespace AllineaPrezziFantaculo
                     if (exsist)
                     {
                         ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 6]).Value = Slot;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 7]).Value = PrezzoFC;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 8]).Value = PrezzoAsta;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 8]).Value = PrezzoFC;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 9]).Value = PrezzoAsta;
                         rigaDaAggiornare = 0;
                     }
                 }

@@ -39,10 +39,9 @@ namespace AllineaPrezziFantaLab
                     int rigaDaAggiornare = 0;
 
                     //Leggo i valori dal file nuovo
-                    var Name = ((Excel.Range)SheetFantaculo.Cells[i, 1]).Value as string ?? "dsa";
-                    var Slot = ((Excel.Range)SheetFantaculo.Cells[i, 6]).Value;
-                    var PrezzoFC = ((Excel.Range)SheetFantaculo.Cells[i, 5]).Value;
-                    var PrezzoAsta = ((Excel.Range)SheetFantaculo.Cells[i, 4]).Value;
+                    var Name = ((Excel.Range)SheetFantaculo.Cells[i, 5]).Value as string ?? "dsa";
+                    var Slot = ((Excel.Range)SheetFantaculo.Cells[i, 2]).Value;
+                    var Prezzo = ((Excel.Range)SheetFantaculo.Cells[i, 6]).Value;
 
                     for (int j = 2; j <= lastUsedRowMio; j++)
                     {
@@ -61,9 +60,8 @@ namespace AllineaPrezziFantaLab
 
                     if (exsist)
                     {
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 6]).Value = Slot;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 7]).Value = PrezzoFC;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 8]).Value = PrezzoAsta;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 7]).Value = Slot;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 10]).Value = Prezzo;
                         rigaDaAggiornare = 0;
                     }
                 }
