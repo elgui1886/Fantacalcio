@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AllineaPrezziFantaculo": {
+      "commandName": "Project",
+      "commandLineArgs": "a"
+    }
+  }
+}
