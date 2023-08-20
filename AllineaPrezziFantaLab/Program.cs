@@ -1,4 +1,5 @@
 ﻿using ExcelManager;
+using System;
 
 namespace AllineaPrezziFantaLab
 {
@@ -40,9 +41,7 @@ namespace AllineaPrezziFantaLab
             string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
             string fileFantalabPath = @"C:\Users\Elia\Downloads\StrategiaProfeta.xlsx";
 
-
-            ExcelReader fileToCopyFrom = new ExcelReader(fileFantalabPath);
-            FantaLabManager excelModifier = new FantaLabManager(mioFilePath, fileToCopyFrom);
+            FantaLabManager excelModifier = new(mioFilePath, fileFantalabPath);
 
 
             if (excelModifier.Allign(sheetname, arg))

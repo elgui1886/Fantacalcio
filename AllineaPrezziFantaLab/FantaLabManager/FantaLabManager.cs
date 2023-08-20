@@ -1,12 +1,20 @@
 ﻿using Excel = Microsoft.Office.Interop.Excel;
 using ExcelManager;
 using Microsoft.Office.Interop.Excel;
+using System;
 
 namespace AllineaPrezziFantaLab
 {
+    //*
+    // Questo manager si occupa di allineare i prezzi tra il file di fantalab (creator: Profeta) e il file di elia
+    // Attenzione!! Il tool si aspetta determinate celle in deterinate posizioni. Se tali posizioni cambiano, il tool va aggiornato
+    // Per riferimenti sulla posizione delle celle confrontare con file anni passati e/o verificare che il nome celle combaci di anno in anno
+    //*
     public class FantaLabManager : ExcelModifier
     {
-        public FantaLabManager(string fileEliaPath, ExcelReader excelFileFantagazzetta) : base(fileEliaPath, excelFileFantagazzetta)
+        private readonly int SlotIndex = 7;
+        private readonly int PrezzoIndex = 11;
+        public FantaLabManager(string fileEliaPath, string filePathFantaLab) : base(fileEliaPath, filePathFantaLab)
         {
         }
 
@@ -15,12 +23,12 @@ namespace AllineaPrezziFantaLab
             return AllineaPrezziESlot(GetSheet(sheetNameFileElia), ExcelToCopyFrom.GetSheet(sheetNameFileToCopyFrom));
         }
 
-        private bool AllineaPrezziESlot(Worksheet SheetElia, Worksheet SheetFantaculo)
+        private bool AllineaPrezziESlot(Worksheet SheetElia, Worksheet SheetFantaLab)
         {
             try
             {
                 //Prendo l'ultima riga nn nulla del foglio nuovo
-                Excel.Range last = SheetFantaculo.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
+                Excel.Range last = SheetFantaLab.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
                 int lastUsedRow = last.Row;
 
                 //Prendo l'ultima riga nn nulla del mio foglio
@@ -39,9 +47,9 @@ namespace AllineaPrezziFantaLab
                     int rigaDaAggiornare = 0;
 
                     //Leggo i valori dal file nuovo
-                    var Name = ((Excel.Range)SheetFantaculo.Cells[i, 5]).Value as string ?? "dsa";
-                    var Slot = ((Excel.Range)SheetFantaculo.Cells[i, 2]).Value;
-                    var Prezzo = ((Excel.Range)SheetFantaculo.Cells[i, 6]).Value;
+                    var Name = ((Excel.Range)SheetFantaLab.Cells[i, 5]).Value as string ?? "dsa";
+                    var Slot = ((Excel.Range)SheetFantaLab.Cells[i, 2]).Value;
+                    var Prezzo = ((Excel.Range)SheetFantaLab.Cells[i, 6]).Value;
 
                     for (int j = 2; j <= lastUsedRowMio; j++)
                     {
@@ -60,8 +68,8 @@ namespace AllineaPrezziFantaLab
 
                     if (exsist)
                     {
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 7]).Value = Slot;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, 10]).Value = Prezzo;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, SlotIndex]).Value = Slot;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoIndex]).Value = Prezzo;
                         rigaDaAggiornare = 0;
                     }
                 }
@@ -73,7 +81,6 @@ namespace AllineaPrezziFantaLab
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
                 return false;
             }
             finally

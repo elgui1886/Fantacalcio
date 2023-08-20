@@ -1,9 +1,8 @@
-﻿using ExcelManager;
-using System;
+﻿using System;
 
-namespace AllineaListone
+namespace CostoAstaPrecedente
 {
-    class Program
+    internal class Program
     {
         public const string Portieri = "Portieri";
         public const string Difensori = "Difensori";
@@ -39,16 +38,16 @@ namespace AllineaListone
                 return;
             }
             string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
-            string listonePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\Quotazioni_Fantacalcio_Stagione_2023_24.xlsx";
+            string fileCostoAstaPrecedentePath = @"C:\Users\Elia\Desktop\Elia\FantaLista\2022-2023\a.xlsx";
 
-            AllignManager excelModifier = new(mioFilePath, listonePath);
+             CostoAstaPrecedenteManager excelModifier = new(mioFilePath, fileCostoAstaPrecedentePath);
 
 
-            if(excelModifier.Allign(sheetname, sheetname))
+            if (excelModifier.Allign(sheetname, "a"))
             {
                 Console.WriteLine("Fatto, tutto ok!");
                 Console.ReadLine();
-            } 
+            }
             else
             {
                 Console.WriteLine("Qualcosa è andato storto ");

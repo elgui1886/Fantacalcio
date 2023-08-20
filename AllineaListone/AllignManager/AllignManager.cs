@@ -1,6 +1,7 @@
 ﻿using Excel = Microsoft.Office.Interop.Excel;
 using ExcelManager;
 using Microsoft.Office.Interop.Excel;
+using System;
 
 namespace AllineaListone
 {
@@ -13,7 +14,7 @@ namespace AllineaListone
     //*
     public class AllignManager : ExcelModifier
     {
-        public AllignManager(string fileEliaPath, ExcelReader excelFileFantagazzetta) : base(fileEliaPath, excelFileFantagazzetta)
+        public AllignManager(string fileEliaPath, string filePathFantagazzetta) : base(fileEliaPath, filePathFantagazzetta)
         {
         }
 
@@ -84,7 +85,6 @@ namespace AllineaListone
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
                 return false;
             }
             finally
@@ -174,7 +174,6 @@ namespace AllineaListone
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
                 CloseBook();
                 ExcelToCopyFrom.CloseBook();
                 return false;

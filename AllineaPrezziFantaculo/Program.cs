@@ -41,9 +41,7 @@ namespace AllineaPrezziFantaculo
             string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
             string fileFantaculoPath = "C:\\Users\\Elia\\Downloads\\Listone_Fantaculo.xlsx";
 
-
-            ExcelReader fileToCopyFrom = new ExcelReader(fileFantaculoPath);
-            FantaculoManager excelModifier = new FantaculoManager(mioFilePath, fileToCopyFrom);
+            FantaculoManager excelModifier = new(mioFilePath, fileFantaculoPath);
 
 
             if (excelModifier.Allign(sheetname, arg))

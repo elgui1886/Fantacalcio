@@ -3,19 +3,16 @@ using ExcelManager;
 using Microsoft.Office.Interop.Excel;
 using System;
 
-namespace AllineaPrezziFantaculo
+
+namespace FantaGoat
 {
-    //*
-    // Questo manager si occupa di allineare i prezzi tra il file di fantaculo e il file di elia
-    // Attenzione!! Il tool si aspetta determinate celle in deterinate posizioni. Se tali posizioni cambiano, il tool va aggiornato
-    // Per riferimenti sulla posizione delle celle confrontare con file anni passati e/o verificare che il nome celle combaci di anno in anno
-    //*
-    public class FantaculoManager : ExcelModifier
+    public class FantaGoatManager : ExcelModifier
     {
-        private readonly int SlotIndex = 6;
-        private readonly int PrezzoIndex = 9;
-        private readonly int PrezzoAsteIndex = 10;
-        public FantaculoManager(string fileEliaPath, string filePathFantaculo) : base(fileEliaPath, filePathFantaculo)
+        private readonly int SlotIndex = 8;
+        private readonly int PrezzoIndex = 12;
+        private readonly int FantaIndexIndex = 13;
+
+        public FantaGoatManager(string fileEliaPath, string filePathFantaGoat) : base(fileEliaPath, filePathFantaGoat)
         {
         }
 
@@ -24,12 +21,12 @@ namespace AllineaPrezziFantaculo
             return AllineaPrezziESlot(GetSheet(sheetNameFileElia), ExcelToCopyFrom.GetSheet(sheetNameFileToCopyFrom));
         }
 
-        private bool AllineaPrezziESlot(Worksheet SheetElia, Worksheet SheetFantaculo)
+        private bool AllineaPrezziESlot(Worksheet SheetElia, Worksheet SheetFantaGoat)
         {
             try
             {
                 //Prendo l'ultima riga nn nulla del foglio nuovo
-                Excel.Range last = SheetFantaculo.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
+                Excel.Range last = SheetFantaGoat.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
                 int lastUsedRow = last.Row;
 
                 //Prendo l'ultima riga nn nulla del mio foglio
@@ -48,10 +45,10 @@ namespace AllineaPrezziFantaculo
                     int rigaDaAggiornare = 0;
 
                     //Leggo i valori dal file nuovo
-                    var Name = ((Excel.Range)SheetFantaculo.Cells[i, 1]).Value as string ?? "dsa";
-                    var Slot = ((Excel.Range)SheetFantaculo.Cells[i, 6]).Value;
-                    var PrezzoFC = ((Excel.Range)SheetFantaculo.Cells[i, 5]).Value;
-                    var PrezzoAsta = ((Excel.Range)SheetFantaculo.Cells[i, 4]).Value;
+                    var Name = ((Excel.Range)SheetFantaGoat.Cells[i, 3]).Value as string ?? "dsa";
+                    var Slot = ((Excel.Range)SheetFantaGoat.Cells[i, 1]).Value as string ?? "";
+                    var FantaIndex = ((Excel.Range)SheetFantaGoat.Cells[i, 4]).Value;
+                    var Prezzo = ((Excel.Range)SheetFantaGoat.Cells[i, 5]).Value;
 
                     for (int j = 2; j <= lastUsedRowMio; j++)
                     {
@@ -59,7 +56,7 @@ namespace AllineaPrezziFantaculo
                         string myName = ((Excel.Range)SheetElia.Cells[j, 2]).Value as string ?? "asd";
 
                         //Confronto
-                        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(myName) && Name.ToUpper().Equals(myName.ToUpper()))
+                        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(myName) && Name.ToUpper().Contains(myName.Replace("'", "").ToUpper().Split()[0]))
                         {
                             exsist = true;
                             rigaDaAggiornare = j;
@@ -70,9 +67,9 @@ namespace AllineaPrezziFantaculo
 
                     if (exsist)
                     {
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, SlotIndex]).Value = Slot;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoIndex]).Value = PrezzoFC;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoAsteIndex]).Value = PrezzoAsta;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, SlotIndex]).Value = Slot.Replace("° SLOT", "");
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoIndex]).Value = Prezzo;
+                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, FantaIndexIndex]).Value = FantaIndex;
                         rigaDaAggiornare = 0;
                     }
                 }

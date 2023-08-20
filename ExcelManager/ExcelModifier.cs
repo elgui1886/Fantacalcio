@@ -3,9 +3,9 @@
     public abstract class ExcelModifier : ExcelReader
     {
         public ExcelReader ExcelToCopyFrom { get; set; }
-        public ExcelModifier(string filePath, ExcelReader excelToCopyFrom) : base(filePath)
+        public ExcelModifier(string fileElia, string filePathToCopyFrom) : base(fileElia)
         {
-            ExcelToCopyFrom = excelToCopyFrom;
+            ExcelToCopyFrom = new ExcelReader(filePathToCopyFrom);
         }
         public abstract bool Allign(string sheetNameFileElia, string sheetNameFileToCopyFrom);
     }

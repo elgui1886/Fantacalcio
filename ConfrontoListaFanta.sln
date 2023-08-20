@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfrontoListaFanta", "ConfrontoListaFanta\ConfrontoListaFanta.csproj", "{A7AD7669-8AFA-4406-9695-3A077959F5C9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelManager", "ExcelManager\ExcelManager.csproj", "{0C109AB9-43A7-4B8C-83D3-4FB9405513A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllineaListone", "AllineaListone\AllineaListone.csproj", "{225DE26D-E957-4638-91B9-35489AF403A0}"
@@ -13,16 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllineaPrezziFantaculo", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllineaPrezziFantaLab", "AllineaPrezziFantaLab\AllineaPrezziFantaLab.csproj", "{E2C68FD0-EFC0-4BA9-A4D0-DBBCDEE8F403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CostoAstaPrecedente", "CostoAstaPrecedente\CostoAstaPrecedente.csproj", "{D4DFB200-2FE4-4848-B111-43B4C09F9C6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantaGoat", "FantaGoat\FantaGoat.csproj", "{417B996C-F616-4FBD-9CFB-15BC72B60910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrator", "Orchestrator\Orchestrator.csproj", "{4B4FC772-CE84-47C0-B456-2D8676AE5B72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7AD7669-8AFA-4406-9695-3A077959F5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7AD7669-8AFA-4406-9695-3A077959F5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7AD7669-8AFA-4406-9695-3A077959F5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7AD7669-8AFA-4406-9695-3A077959F5C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C109AB9-43A7-4B8C-83D3-4FB9405513A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C109AB9-43A7-4B8C-83D3-4FB9405513A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C109AB9-43A7-4B8C-83D3-4FB9405513A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +39,18 @@ Global
 		{E2C68FD0-EFC0-4BA9-A4D0-DBBCDEE8F403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2C68FD0-EFC0-4BA9-A4D0-DBBCDEE8F403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2C68FD0-EFC0-4BA9-A4D0-DBBCDEE8F403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DFB200-2FE4-4848-B111-43B4C09F9C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DFB200-2FE4-4848-B111-43B4C09F9C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DFB200-2FE4-4848-B111-43B4C09F9C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DFB200-2FE4-4848-B111-43B4C09F9C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417B996C-F616-4FBD-9CFB-15BC72B60910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417B996C-F616-4FBD-9CFB-15BC72B60910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417B996C-F616-4FBD-9CFB-15BC72B60910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417B996C-F616-4FBD-9CFB-15BC72B60910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4FC772-CE84-47C0-B456-2D8676AE5B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4FC772-CE84-47C0-B456-2D8676AE5B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4FC772-CE84-47C0-B456-2D8676AE5B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4FC772-CE84-47C0-B456-2D8676AE5B72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

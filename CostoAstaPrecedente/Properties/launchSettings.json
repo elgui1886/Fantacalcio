@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CostoAstaPrecedente": {
+      "commandName": "Project",
+      "commandLineArgs": "p"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FantaGoat": {
+      "commandName": "Project",
+      "commandLineArgs": "a"
+    }
+  }
+}

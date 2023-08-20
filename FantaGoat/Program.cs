@@ -1,9 +1,8 @@
-﻿using ExcelManager;
-using System;
+﻿using System;
 
-namespace AllineaListone
+namespace FantaGoat
 {
-    class Program
+    internal class Program
     {
         public const string Portieri = "Portieri";
         public const string Difensori = "Difensori";
@@ -39,20 +38,20 @@ namespace AllineaListone
                 return;
             }
             string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
-            string listonePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\Quotazioni_Fantacalcio_Stagione_2023_24.xlsx";
+            string fileFantaGoatPath = @"C:\Users\Elia\Downloads\lega_Slot_ Lega a 10 partecipanti.xlsx";
 
-            AllignManager excelModifier = new(mioFilePath, listonePath);
+            FantaGoatManager excelModifier = new(mioFilePath, fileFantaGoatPath);
 
 
-            if(excelModifier.Allign(sheetname, sheetname))
+            if (excelModifier.Allign(sheetname, "Sheet1"))
             {
                 Console.WriteLine("Fatto, tutto ok!");
-                Console.ReadLine();
-            } 
+                // Console.ReadLine();
+            }
             else
             {
                 Console.WriteLine("Qualcosa è andato storto ");
-                Console.ReadLine();
+                // Console.ReadLine();
             }
         }
     }
