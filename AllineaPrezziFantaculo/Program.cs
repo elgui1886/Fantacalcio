@@ -10,6 +10,13 @@ namespace AllineaPrezziFantaculo
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
 
+        public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string FileFantaculoPath = "C:\\Users\\eliag\\Desktop\\Elia\\FantaLista\\Fantacalcio\\AllineaPrezziFantaculo\\src\\Listone_Fantaculo.xlsx";
+        public static string[] columnNameToRead = { "name", "slot", "pfc", "pma" };
+        public static string[] columnNameToWrite = { "Nome", "SLOT FC", "PREZZO FC", "PREZZO ASTA" };
+
+
+
         static void Main(string[] args)
         {
             string sheetname = string.Empty;
@@ -38,16 +45,11 @@ namespace AllineaPrezziFantaculo
                 Console.WriteLine("Nessun argomento passato");
                 return;
             }
-            string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
-            string fileFantaculoPath = "C:\\Users\\Elia\\Downloads\\Listone_Fantaculo.xlsx";
 
-            FantaculoManager excelModifier = new(mioFilePath, fileFantaculoPath);
-
-
-            if (excelModifier.Allign(sheetname, arg))
+            ExcelModifier manager = new(MioFilePath, FileFantaculoPath);
+            if (manager.Allign(sheetname, columnNameToWrite, arg, columnNameToRead, Tool.Fantaculo))
             {
                 Console.WriteLine("Fatto, tutto ok!");
-                Console.ReadLine();
             }
             else
             {

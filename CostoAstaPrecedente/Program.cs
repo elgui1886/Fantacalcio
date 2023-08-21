@@ -40,7 +40,7 @@ namespace CostoAstaPrecedente
             string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
             string fileCostoAstaPrecedentePath = @"C:\Users\Elia\Desktop\Elia\FantaLista\2022-2023\a.xlsx";
 
-             CostoAstaPrecedenteManager excelModifier = new(mioFilePath, fileCostoAstaPrecedentePath);
+             CostoAstaPrecedenteManager.CostoAstaPrecedenteManager excelModifier = new(mioFilePath, fileCostoAstaPrecedentePath);
 
 
             if (excelModifier.Allign(sheetname, "a"))

@@ -1,4 +1,4 @@
-﻿using ExcelManager;
+﻿using AllineaListoneManager;
 using System;
 
 namespace AllineaListone
@@ -38,8 +38,8 @@ namespace AllineaListone
                 Console.WriteLine("Nessun argomento passato");
                 return;
             }
-            string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
-            string listonePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\Quotazioni_Fantacalcio_Stagione_2023_24.xlsx";
+        string mioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        string listonePath = "C:\\Users\\eliag\\Desktop\\Elia\\FantaLista\\2023-2024\\Quotazioni_Fantacalcio_Stagione_2023_24.xlsx";
 
             AllignManager excelModifier = new(mioFilePath, listonePath);
 

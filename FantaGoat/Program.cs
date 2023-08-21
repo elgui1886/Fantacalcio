@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcelManager;
+using System;
 
 namespace FantaGoat
 {
@@ -8,6 +9,13 @@ namespace FantaGoat
         public const string Difensori = "Difensori";
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
+
+        public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string FileFantaGoatPath = "C:\\Users\\eliag\\Desktop\\Elia\\FantaLista\\Fantacalcio\\FantaGoat\\src\\lega_Slot_ Lega a 10 partecipanti.xlsx";
+        public static string[] columnNameToRead = { "Player", "Slot", "Prezzo massimo" };
+        public static string[] columnNameToWrite = { "Nome", "SLOT FG", "PREZZO FANTAGOAT" };
+
+
 
         static void Main(string[] args)
         {
@@ -37,21 +45,16 @@ namespace FantaGoat
                 Console.WriteLine("Nessun argomento passato");
                 return;
             }
-            string mioFilePath = "C:\\Users\\Elia\\Desktop\\Elia\\FantaLista\\2023-2024\\EG_ListoneAsta_2023-2024.xlsx";
-            string fileFantaGoatPath = @"C:\Users\Elia\Downloads\lega_Slot_ Lega a 10 partecipanti.xlsx";
 
-            FantaGoatManager excelModifier = new(mioFilePath, fileFantaGoatPath);
-
-
-            if (excelModifier.Allign(sheetname, "Sheet1"))
+            ExcelModifier manager = new(MioFilePath, FileFantaGoatPath);
+            if (manager.Allign(sheetname, columnNameToWrite, "Sheet1", columnNameToRead, Tool.Fantagoat))
             {
                 Console.WriteLine("Fatto, tutto ok!");
-                // Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Qualcosa è andato storto ");
-                // Console.ReadLine();
+                Console.ReadLine();
             }
         }
     }

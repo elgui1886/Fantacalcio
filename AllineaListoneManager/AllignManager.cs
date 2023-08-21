@@ -3,7 +3,7 @@ using ExcelManager;
 using Microsoft.Office.Interop.Excel;
 using System;
 
-namespace AllineaListone
+namespace AllineaListoneManager
 {
     //*
     // Questo manager si occupa di allineare il listone di Elia con quello di Fantagazzetta
@@ -18,11 +18,11 @@ namespace AllineaListone
         {
         }
 
-        public override bool Allign(string sheetNameFileElia, string sheetNameFileToCopyFrom)
+        public bool Allign(string sheetNameFileElia, string sheetNameFileToCopyFrom)
         {
             Worksheet SheetFantagazzetta = ExcelToCopyFrom.GetSheet(sheetNameFileToCopyFrom);
             Worksheet SheetFileElia = GetSheet(sheetNameFileElia);
-            if(AggiungiMancanti(SheetFileElia, SheetFantagazzetta))
+            if (AggiungiMancanti(SheetFileElia, SheetFantagazzetta))
             {
                 return RimuoviAndatiVia(SheetFileElia, SheetFantagazzetta);
             }
