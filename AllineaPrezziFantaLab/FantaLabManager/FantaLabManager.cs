@@ -13,7 +13,7 @@ namespace AllineaPrezziFantaLab
     public class FantaLabManager : ExcelModifier
     {
         private readonly int SlotIndex = 7;
-        private readonly int PrezzoIndex = 11;
+        private readonly int PrezzoIndex = 12;
         public FantaLabManager(string fileEliaPath, string filePathFantaLab) : base(fileEliaPath, filePathFantaLab)
         {
         }
@@ -68,6 +68,18 @@ namespace AllineaPrezziFantaLab
 
                     if (exsist)
                     {
+                        if(Slot == "Top")
+                        {
+                            Slot = 1;
+                        }
+                        else if (Slot == "Semi-Top")
+                        {
+                            Slot = 2;
+                        }
+                        else if (Slot == "Terza Fascia")
+                        {
+                            Slot = 3;
+                        }
                         ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, SlotIndex]).Value = Slot;
                         ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoIndex]).Value = Prezzo;
                         rigaDaAggiornare = 0;

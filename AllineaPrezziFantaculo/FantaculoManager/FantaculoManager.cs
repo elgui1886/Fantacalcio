@@ -13,8 +13,8 @@ namespace AllineaPrezziFantaculo
     public class FantaculoManager : ExcelModifier
     {
         private readonly int SlotIndex = 6;
-        private readonly int PrezzoIndex = 9;
-        private readonly int PrezzoAsteIndex = 10;
+        private readonly int PrezzoIndex = 10;
+        private readonly int PrezzoAsteIndex = 11;
         public FantaculoManager(string fileEliaPath, string filePathFantaculo) : base(fileEliaPath, filePathFantaculo)
         {
         }

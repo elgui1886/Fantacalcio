@@ -9,8 +9,7 @@ namespace FantaGoat
     public class FantaGoatManager : ExcelModifier
     {
         private readonly int SlotIndex = 8;
-        private readonly int PrezzoIndex = 12;
-        private readonly int FantaIndexIndex = 13;
+        private readonly int PrezzoIndex = 13;
 
         public FantaGoatManager(string fileEliaPath, string filePathFantaGoat) : base(fileEliaPath, filePathFantaGoat)
         {
@@ -69,7 +68,6 @@ namespace FantaGoat
                     {
                         ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, SlotIndex]).Value = Slot.Replace("° SLOT", "");
                         ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, PrezzoIndex]).Value = Prezzo;
-                        ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, FantaIndexIndex]).Value = FantaIndex;
                         rigaDaAggiornare = 0;
                     }
                 }

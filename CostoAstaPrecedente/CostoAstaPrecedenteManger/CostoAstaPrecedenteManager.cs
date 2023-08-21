@@ -12,7 +12,7 @@ namespace CostoAstaPrecedente
     //*
     public class CostoAstaPrecedenteManager : ExcelModifier
     {
-        private readonly int QAPIndex = 14;
+        private readonly int QAPIndex = 17;
         public CostoAstaPrecedenteManager(string mioFilePath, string fileRoseAstaPrecedente) : base(mioFilePath, fileRoseAstaPrecedente)
         {
         }
