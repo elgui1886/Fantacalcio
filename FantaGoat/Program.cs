@@ -11,7 +11,7 @@ namespace FantaGoat
         public const string Attaccanti = "Attaccanti";
 
         public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
-        public const string FileFantaGoatPath = "C:\\Users\\eliag\\Desktop\\Elia\\FantaLista\\Fantacalcio\\FantaGoat\\src\\lega_Slot_ Lega a 10 partecipanti.xlsx";
+        public const string FileFantaGoatPath = "C:\\Dev\\Fantacalcio\\FantaGoat\\src\\lega_Slot_ Lega a 10 partecipanti.xlsx";
         public static string[] columnNameToRead = { "Player", "Slot", "Prezzo massimo" };
         public static string[] columnNameToWrite = { "Nome", "SLOT FG", "PREZZO FANTAGOAT" };
 

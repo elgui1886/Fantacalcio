@@ -11,7 +11,7 @@ namespace AllineaPrezziFantaculo
         public const string Attaccanti = "Attaccanti";
 
         public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
-        public const string FileFantaculoPath = "C:\\Users\\eliag\\Desktop\\Elia\\FantaLista\\Fantacalcio\\AllineaPrezziFantaculo\\src\\Listone_Fantaculo.xlsx";
+        public const string FileFantaculoPath = @"C:\Dev\Fantacalcio\AllineaPrezziFantaculo\src\Listone_Fantaculo.xlsx";
         public static string[] columnNameToRead = { "name", "slot", "pfc", "pma" };
         public static string[] columnNameToWrite = { "Nome", "SLOT FC", "PREZZO FC", "PREZZO ASTA" };
 
