@@ -47,7 +47,6 @@ namespace AllineaListone
             if(excelModifier.Allign(sheetname, sheetname))
             {
                 Console.WriteLine("Fatto, tutto ok!");
-                Console.ReadLine();
             } 
             else
             {
