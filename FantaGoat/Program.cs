@@ -1,5 +1,6 @@
 ﻿using ExcelManager;
 using System;
+using System.Collections.Generic;
 
 namespace FantaGoat
 {
@@ -12,8 +13,14 @@ namespace FantaGoat
 
         public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
         public const string FileFantaGoatPath = "C:\\Dev\\Fantacalcio\\FantaGoat\\src\\lega_Slot_ Lega a 10 partecipanti.xlsx";
-        public static string[] columnNameToRead = { "Player", "Slot", "Prezzo massimo" };
-        public static string[] columnNameToWrite = { "Nome", "SLOT FG", "PREZZO FANTAGOAT" };
+
+
+        public static List<MappingCell> mapping = new()
+        {
+            new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Player" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "SLOT FG" }, ReadableCell = new ReadableCell { Name = "Slot", Type = "double", ValueFormatter = slot => slot.Replace("° SLOT", "") } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO FANTAGOAT" }, ReadableCell = new ReadableCell { Name = "Prezzo massimo", Type = "double" } },
+        };
 
 
 
@@ -47,7 +54,7 @@ namespace FantaGoat
             }
 
             ExcelModifier manager = new(MioFilePath, FileFantaGoatPath);
-            if (manager.Allign(sheetname, columnNameToWrite, "Sheet1", columnNameToRead, Tool.Fantagoat))
+            if (manager.Allign(sheetname, "Sheet1", mapping))
             {
                 Console.WriteLine("Fatto, tutto ok!");
             }

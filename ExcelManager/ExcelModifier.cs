@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -13,7 +14,7 @@ namespace ExcelManager
         {
             ExcelToCopyFrom = new ExcelReader<ReadableCell>(filePathToCopyFrom);
         }
-        public bool Allign(string sheetNameFileElia, string[] columnNameToWrite, string sheetNameFileToCopyFrom, string[] columnNameToRead, Tool tool)
+        public bool Allign(string sheetNameFileElia, string sheetNameFileToCopyFrom, List<MappingCell> mappingCells)
         {
             var SheetElia = GetSheet(sheetNameFileElia);
             var SheetFantaculo = ExcelToCopyFrom.GetSheet(sheetNameFileToCopyFrom);
@@ -30,14 +31,14 @@ namespace ExcelManager
                 //Rappresenta la prima riga nulla, ovvero quella dove evenutualmente inseriro i nuovi dati
                 int RowToInsert = lastUsedRowMio + 2;
 
+                var _readableCells = mappingCells.Select(c => c.ReadableCell);
+                var readableCells = ExcelToCopyFrom.SetColumsIndexesByNames(_readableCells).ToArray();
 
-                var readableCells = ExcelToCopyFrom.GetColumsIndexesByNames(columnNameToRead);
-
-
-                var writableCells = GetColumsIndexesByNames(columnNameToWrite);
+                var _writableCells = mappingCells.Select(c => c.WritableCell).ToArray();
+                var writableCells = SetColumsIndexesByNames(_writableCells).ToArray();
 
                 // Devono essere in egual numero
-                if (writableCells.Count != readableCells.Count)
+                if (writableCells.Length != readableCells.Length)
                 {
                     throw new Exception("Errore nella configurazione");
                 }
@@ -56,14 +57,14 @@ namespace ExcelManager
                     }
 
                     // Essendo il nome il fattore di matching tra il mio file e il file da cui attingere, questo dovrà essere sempre la PRIMA colonna specificata nel file di configurazione
-                    var Name = readableCells[0].Value ?? "asd";
+                    var Name = readableCells.First().Value ?? "asd";
 
                     ////Leggo i valori dal file nuovo
 
                     for (int j = 2; j <= lastUsedRowMio; j++)
                     {
                         //Leggo i vecchi valori dal mio file
-                        var myNameCell = writableCells[0];
+                        var myNameCell = writableCells.First();
                         string myName = ((Excel.Range)SheetElia.Cells[j, myNameCell.Index]).Value as string ?? "asd";
 
 
@@ -80,11 +81,11 @@ namespace ExcelManager
                     if (exsist)
                     {
                         // Skippo il primo poichè è il nome che non voglio sia aggiornato
-                        for (int w = 1; w < writableCells.Count; w++)
+                        for (int w = 1; w < writableCells.Length; w++)
                         {
                             var writableCell = writableCells[w];
                             var readableCell = readableCells[w];
-                            var value = CustomizeValueTool(tool, readableCell.Value);
+                            var value = CustomizeValueTool(readableCell);
                             ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, writableCell.Index]).Value = value;
                         }
                         rigaDaAggiornare = 0;
@@ -109,30 +110,30 @@ namespace ExcelManager
             }
         }
 
-        private dynamic CustomizeValueTool(Tool tool, dynamic value)
+        private object CustomizeValueTool(ReadableCell cell)
         {
-            value = value.ToString();
-            switch (tool)
+            var value = cell.Value.ToString();
+            if (cell.ValueFormatter != null)
             {
-                case Tool.Fantagoat:
-                    value = value.Replace("° SLOT", "");
-                    break;
-                case Tool.Fantalab:
-                    if (value == "Top")
-                    {
-                        value = "1";
-                    }
-                    if (value == "Semi-Top")
-                    {
-                        value = "2";
-                    }
-                    if (value == "Terza Fascia")
-                    {
-                        value = "3";
-                    }
-                    break;
+                value = cell.ValueFormatter(value);
             }
+
+            value = ConvertFromString(value, cell.Type);
             return value;
+        }
+
+        private object ConvertFromString(string valoreStringa, string tipoDesiderato)
+        {
+            tipoDesiderato ??= "string";
+
+            // Ottieni il tipo corrispondente alla stringa specificata
+            if (!_typeAlias.TryGetValue(tipoDesiderato, out Type tipo))
+            {
+                return valoreStringa;
+            }
+            // Converte la stringa nel tipo desiderato utilizzando il metodo Parse
+            return Convert.ChangeType(valoreStringa, tipo);
+
         }
     }
 }

@@ -1,12 +1,19 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelManager
 {
     public class ExcelReader<T> where T : ExcelCell, new()
     {
+    protected readonly Dictionary<string, Type> _typeAlias = new()
+    {
+        {  "bool" ,typeof(bool) },
+        {  "double", typeof(double) },
+        {  "string" , typeof(string) },
+    };
         protected Application Application { get; set; }
         protected Workbook WorkBook { get; set; }
         protected Worksheet Sheet { get; set; }
@@ -18,22 +25,18 @@ namespace ExcelManager
         }
         public Worksheet GetSheet(string sheetName)
         {
-            Sheet =(Worksheet)WorkBook.Worksheets[sheetName];
+            Sheet = (Worksheet)WorkBook.Worksheets[sheetName];
             return Sheet;
         }
 
-        public virtual List<T> GetColumsIndexesByNames(string[] columnName)
+        public IEnumerable<T> SetColumsIndexesByNames(IEnumerable<T> columnsName)
         {
-            var mapper = new List<T>();   
-            foreach (var name in columnName)
+            foreach (var cell in columnsName)
             {
-                var index = FindColumnIndexByName(Sheet, name);
-                if (index != -1)
-                {
-                    mapper.Add(new T { Name = name, Index = index });
-                }
-            }       
-            return mapper;
+                cell.Index = FindColumnIndexByName(Sheet, cell.Name);
+
+            }
+            return columnsName;
         }
 
         public void Save()

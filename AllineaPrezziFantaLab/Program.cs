@@ -1,5 +1,6 @@
 ﻿using ExcelManager;
 using System;
+using System.Collections.Generic;
 
 namespace FantaGoat
 {
@@ -12,8 +13,29 @@ namespace FantaGoat
 
         public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
         public const string FileFantaLabPath = "C:\\Dev\\Fantacalcio\\AllineaPrezziFantaLab\\src\\Strategia Il Profeta.xlsx";
-        public static string[] columnNameToRead = { "Nome", "Fascia", "Prezzo" };
-        public static string[] columnNameToWrite = { "Nome", "SLOT PROFETA", "PREZZO PROFETA" };
+
+        public static List<MappingCell> mapping = new()
+        {
+            new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Nome" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "SLOT PROFETA" }, ReadableCell = new ReadableCell { Name = "Fascia", ValueFormatter = (slot) =>
+            {
+                    if (slot == "Top")
+                    {
+                        slot = "1";
+                    }
+                    else if (slot == "Semi-Top")
+                    {
+                        slot = "2";
+                    }
+                    else if (slot == "Terza Fascia")
+                    {
+                        slot = "3";
+                    }
+                    return slot;
+
+            } } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO PROFETA" }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
+        };
 
 
 
@@ -47,7 +69,7 @@ namespace FantaGoat
             }
 
             ExcelModifier manager = new(MioFilePath, FileFantaLabPath);
-            if (manager.Allign(sheetname, columnNameToWrite, arg, columnNameToRead, Tool.Fantalab))
+            if (manager.Allign(sheetname, arg, mapping))
             {
                 Console.WriteLine("Fatto, tutto ok!");
             }

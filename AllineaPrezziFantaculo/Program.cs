@@ -1,5 +1,6 @@
 ﻿using ExcelManager;
 using System;
+using System.Collections.Generic;
 
 namespace AllineaPrezziFantaculo
 {
@@ -12,9 +13,15 @@ namespace AllineaPrezziFantaculo
 
         public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
         public const string FileFantaculoPath = @"C:\Dev\Fantacalcio\AllineaPrezziFantaculo\src\Listone_Fantaculo.xlsx";
-        public static string[] columnNameToRead = { "name", "slot", "pfc", "pma" };
-        public static string[] columnNameToWrite = { "Nome", "SLOT FC", "PREZZO FC", "PREZZO ASTA" };
 
+
+        public static List<MappingCell> mapping = new()
+        {
+            new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "name" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "SLOT FC" }, ReadableCell = new ReadableCell { Name = "slot", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO FC" }, ReadableCell = new ReadableCell { Name = "pfc", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO ASTA" }, ReadableCell = new ReadableCell { Name = "pma", Type = "double" }}
+        };
 
 
         static void Main(string[] args)
@@ -47,7 +54,7 @@ namespace AllineaPrezziFantaculo
             }
 
             ExcelModifier manager = new(MioFilePath, FileFantaculoPath);
-            if (manager.Allign(sheetname, columnNameToWrite, arg, columnNameToRead, Tool.Fantaculo))
+            if (manager.Allign(sheetname, arg, mapping))
             {
                 Console.WriteLine("Fatto, tutto ok!");
             }

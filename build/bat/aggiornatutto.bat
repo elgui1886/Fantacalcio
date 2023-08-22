@@ -28,11 +28,11 @@ echo "Attaccanti fantagoat..."
 start /wait FantaGoatExecutable.exe a
 
 echo "Portieri fantalab..."
-start /wait FantaLabExecutable.exe a
+start /wait FantaLabExecutable.exe p
 echo "Difensori fantalab..."
-start /wait FantaLabExecutable.exe a
+start /wait FantaLabExecutable.exe d
 echo "Centrocampisti fantalab..."
-start /wait FantaLabExecutable.exe a
+start /wait FantaLabExecutable.exe c
 echo "Attaccanti fantalab..."
 start /wait FantaLabExecutable.exe a
 
