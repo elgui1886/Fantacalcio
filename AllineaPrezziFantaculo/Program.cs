@@ -11,8 +11,8 @@ namespace AllineaPrezziFantaculo
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
 
-        public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
-        public const string FileFantaculoPath = @"C:\Dev\Fantacalcio\AllineaPrezziFantaculo\src\Listone_Fantaculo.xlsx";
+        public const string MioFilePath = @"C:\Dev\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string FileFantaculoPath = @"C:\Users\eliag\Downloads\Listone_Fantaculo.xlsx";
 
 
         public static List<MappingCell> mapping = new()

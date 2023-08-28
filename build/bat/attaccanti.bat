@@ -1,15 +1,15 @@
 @echo off
 
+cd ..
+
 echo "Allinea Listone Attaccanti..."
-start /wait AllineaListoneExecutable.exe a
+start /wait /B AllineaListoneExecutable.exe a
 
 echo "Attaccanti fantaculo..."
-start /wait FantaculoExecutable.exe a
+start /wait /B FantaculoExecutable.exe a
 
 echo "Attaccanti fantagoat..."
-start /wait FantaGoatExecutable.exe a
+start /wait /B FantaGoatExecutable.exe a
 
 echo "Attaccanti fantalab..."
-start /wait FantaLabExecutable.exe a
-
-pause
+start /wait /B FantaLabExecutable.exe a

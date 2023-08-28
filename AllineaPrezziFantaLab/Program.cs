@@ -11,8 +11,8 @@ namespace FantaGoat
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
 
-        public const string MioFilePath = @"C:\Users\eliag\Desktop\Elia\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
-        public const string FileFantaLabPath = "C:\\Dev\\Fantacalcio\\AllineaPrezziFantaLab\\src\\Strategia Il Profeta.xlsx";
+        public const string MioFilePath = @"C:\Dev\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
 
         public static List<MappingCell> mapping = new()
         {

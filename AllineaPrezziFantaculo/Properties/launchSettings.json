@@ -2,7 +2,7 @@
   "profiles": {
     "AllineaPrezziFantaculo": {
       "commandName": "Project",
-      "commandLineArgs": "a"
+      "commandLineArgs": "p"
     }
   }
 }
