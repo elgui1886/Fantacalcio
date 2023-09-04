@@ -11,5 +11,11 @@ start /wait /B FantaculoExecutable.exe p
 echo "Portieri fantagoat..."
 start /wait /B FantaGoatExecutable.exe p
 
-echo "Portieri fantalab..."
-start /wait /B FantaLabExecutable.exe p
+echo "Portieri profeta..."
+start /wait /B ProfetaExecutable.exe p
+
+echo "Portieri cantarini..."
+start /wait /B CantariniExecutable.exe p
+
+echo "Portieri carmy..."
+start /wait /B CarmyExecutable.exe p

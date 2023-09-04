@@ -2,7 +2,7 @@
   "profiles": {
     "AllineaPrezziFantaLab": {
       "commandName": "Project",
-      "commandLineArgs": "a"
+      "commandLineArgs": "p"
     }
   }
 }
