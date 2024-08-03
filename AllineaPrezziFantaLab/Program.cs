@@ -14,37 +14,54 @@ namespace FantaLab
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
 
-        public const string MioFilePath = @"C:\Dev\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string MioFilePath = @"C:\Dev\FantaLista\2024-2025\EG_ListoneAsta_2024-2025.xlsx";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
+        //public const string Nomeprezzo = "PREZZO CARMY";
+        //public const string Nomefascia = "FASCIA CARMY";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Lorenzo Cantarini.xlsx";
+        //public const string Nomeprezzo = "PREZZO CANTARINI";
+        //public const string Nomefascia = "FASCIA CANTARINI";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
+        //public const string Nomeprezzo = "PREZZO PROFETA";
+        //public const string Nomefascia = "FASCIA PROFETA";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Recosta.xlsx";
+        //public const string Nomeprezzo = "PREZZO RECOSTA";
+        //public const string Nomefascia = "FASCIA RECOSTA";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Walk Off Sport.xlsx";
+        //public const string Nomeprezzo = "PREZZO WALK";
+        //public const string Nomefascia = "FASCIA WALK";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Fanta__Boom.xlsx";
+        //public const string Nomeprezzo = "PREZZO FANTABOOM";
+        //public const string Nomefascia = "FASCIA FANTABOOM";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
+        //public const string Nomeprezzo = "PREZZO PROFETA";
+        //public const string Nomefascia = "FASCIA PROFETA";
+        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia SOS Fanta";
+        public const string Nomeprezzo = "PREZZO SOS";
+        public const string Nomefascia = "FASCIA SOS";
 
-        #region Profeta
-        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
+
         public static List<MappingCell> mapping = new()
         {
             new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Nome" } },
-            new MappingCell { WritableCell = new ExcelCell { Name = "FASCIA" }, ReadableCell = new ReadableCell { Name = "Fascia" } },
-            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO PROFETA" }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = Nomeprezzo }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = Nomefascia }, ReadableCell = new ReadableCell { Name = "Fascia", ValueFormatter = slot => {
+                if(slot is null)
+                {
+                    return string.Empty;
+                }
+                if(slot.Contains("Non Impostata"))
+                {
+                    return string.Empty;
+                }
+                if(slot.Contains("°") )
+                {
+                    return slot.Replace("°", " ");
+                }
+                return slot;
+            } } },
         };
 
-        #endregion
-
-
-        #region Cantarini
-        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Lorenzo Cantarini.xlsx";
-        //public static List<MappingCell> mapping = new()
-        //{
-        //    new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Nome" } },
-        //    new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO CANTARINI" }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
-        //};
-        #endregion
-
-        //#region carmyspecial
-        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
-        //public static List<MappingCell> mapping = new()
-        //{
-        //    new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Nome" } },
-        //    new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO CARMY" }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
-        //};
-        //#endregion
 
 
 
