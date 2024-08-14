@@ -1,0 +1,2 @@
+C:\Dev\Fantacalcio\build\EseguiBats.pdb
+C:\Dev\Fantacalcio\build\EseguiBats.exe

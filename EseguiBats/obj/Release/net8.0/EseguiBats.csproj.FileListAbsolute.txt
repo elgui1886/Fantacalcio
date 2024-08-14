@@ -1,0 +1,15 @@
+C:\Dev\Fantacalcio\EseguiBats\bin\Release\net8.0\EseguiBats.exe
+C:\Dev\Fantacalcio\EseguiBats\bin\Release\net8.0\EseguiBats.deps.json
+C:\Dev\Fantacalcio\EseguiBats\bin\Release\net8.0\EseguiBats.runtimeconfig.json
+C:\Dev\Fantacalcio\EseguiBats\bin\Release\net8.0\EseguiBats.dll
+C:\Dev\Fantacalcio\EseguiBats\bin\Release\net8.0\EseguiBats.pdb
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.AssemblyInfoInputs.cache
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.AssemblyInfo.cs
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.csproj.CoreCompileInputs.cache
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.sourcelink.json
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.dll
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\refint\EseguiBats.dll
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.pdb
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\EseguiBats.genruntimeconfig.cache
+C:\Dev\Fantacalcio\EseguiBats\obj\Release\net8.0\ref\EseguiBats.dll

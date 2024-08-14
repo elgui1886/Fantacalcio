@@ -1,0 +1,5 @@
+C:\Dev\Fantacalcio\build\EseguiBats.exe
+C:\Dev\Fantacalcio\build\EseguiBats.dll
+C:\Dev\Fantacalcio\build\EseguiBats.deps.json
+C:\Dev\Fantacalcio\build\EseguiBats.runtimeconfig.json
+C:\Dev\Fantacalcio\build\EseguiBats.pdb

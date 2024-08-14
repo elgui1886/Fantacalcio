@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -69,7 +70,7 @@ namespace ExcelManager
 
 
                         //Confronto
-                        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(myName) && Name.ToUpper().Contains(myName.ToUpper()))
+                        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(myName) && Name.ToUpper().Equals(myName.ToUpper()))
                         {
                             exsist = true;
                             rigaDaAggiornare = j;
@@ -89,6 +90,10 @@ namespace ExcelManager
                             ((Excel.Range)SheetElia.Cells[rigaDaAggiornare, writableCell.Index]).Value = value;
                         }
                         rigaDaAggiornare = 0;
+                    } else
+                    {
+                        Console.WriteLine($"Non sto trovando {Name}");
+                        Console.ReadLine();
                     }
                 }
 
@@ -103,10 +108,12 @@ namespace ExcelManager
             }
             finally
             {
-                CloseBook();
                 ExcelToCopyFrom.CloseBook();
-                Quit();
+                CloseBook();
                 ExcelToCopyFrom.Quit();
+                Quit();
+                ExcelToCopyFrom.ReleaseComObject();
+                ReleaseComObject();
             }
         }
 

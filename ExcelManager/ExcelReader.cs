@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelManager
@@ -52,6 +53,19 @@ namespace ExcelManager
         public void Quit()
         {
             Application.Quit();
+        }
+
+        public void ReleaseComObject()
+        {
+            // Rilascia gli oggetti COM
+            if (Sheet is not null) Marshal.ReleaseComObject(Sheet);
+            if (WorkBook is not null) Marshal.ReleaseComObject(WorkBook);
+            if (Application is not null) Marshal.ReleaseComObject(Application);
+            // Forza la raccolta del garbage collector
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
 

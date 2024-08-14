@@ -11,16 +11,16 @@ namespace AllineaPrezziFantaculo
         public const string Centrocampisti = "Centrocampisti";
         public const string Attaccanti = "Attaccanti";
 
-        public const string MioFilePath = @"C:\Dev\FantaLista\2023-2024\EG_ListoneAsta_2023-2024.xlsx";
+        public const string MioFilePath = @"C:\Dev\FantaLista\2024-2025\EG_ListoneAsta_2024-2025.xlsx";
         public const string FileFantaculoPath = @"C:\Users\eliag\Downloads\Listone_Fantaculo.xlsx";
 
 
         public static List<MappingCell> mapping = new()
         {
             new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "name" } },
-            new MappingCell { WritableCell = new ExcelCell { Name = "SLOT FC" }, ReadableCell = new ReadableCell { Name = "slot", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "FASCIA FC" }, ReadableCell = new ReadableCell { Name = "slot", Type = "double" } },
             new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO FC" }, ReadableCell = new ReadableCell { Name = "pfc", Type = "double" } },
-            new MappingCell { WritableCell = new ExcelCell { Name = "PREZZO ASTA" }, ReadableCell = new ReadableCell { Name = "pma", Type = "double" }}
+            new MappingCell { WritableCell = new ExcelCell { Name = "FC_PMA" }, ReadableCell = new ReadableCell { Name = "pma", Type = "double" }}
         };
 
 

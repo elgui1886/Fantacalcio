@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/PNF9EFXBZY3Cds3MnHYDlMk9vBa+kQLTCoD1UyN0SZI2hGqcmD0nOJfXrdDjqbTxZiTsJ97Lhe1mrWA+mNUbg==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\Fantacalcio\\EseguiBats\\EseguiBats.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\eliag\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.4\\microsoft.net.illink.tasks.8.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AllineaCostoAstaPrecedente"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CostoAstaPrecedenteManager", "CostoAstaPrecedenteManager\CostoAstaPrecedenteManager.csproj", "{8F20CCBF-4FB7-4E44-897B-A1D6215E2F8C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EseguiBat", "EseguiBat", "{7197F38C-33E3-4788-8123-60662E7C534E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EseguiBats", "EseguiBats\EseguiBats.csproj", "{3EE43288-5208-43C1-8075-B38BAC653A0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{8F20CCBF-4FB7-4E44-897B-A1D6215E2F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F20CCBF-4FB7-4E44-897B-A1D6215E2F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F20CCBF-4FB7-4E44-897B-A1D6215E2F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE43288-5208-43C1-8075-B38BAC653A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE43288-5208-43C1-8075-B38BAC653A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE43288-5208-43C1-8075-B38BAC653A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE43288-5208-43C1-8075-B38BAC653A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,7 @@ Global
 		{4938FF57-4D81-4797-B325-E3B17A33D3F8} = {E0E12A16-13DF-401B-AEFF-F138097EE8AD}
 		{693A9C5F-CB07-4073-B214-571599AE964B} = {E0E12A16-13DF-401B-AEFF-F138097EE8AD}
 		{8F20CCBF-4FB7-4E44-897B-A1D6215E2F8C} = {D9852EC4-5B72-4D0B-AA5E-74442E6B7320}
+		{3EE43288-5208-43C1-8075-B38BAC653A0E} = {7197F38C-33E3-4788-8123-60662E7C534E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67250AD3-FB52-412C-B637-2BD350866D61}

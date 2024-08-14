@@ -4,11 +4,16 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
 		<PublishSingleFile>true</PublishSingleFile>
-		<BaseOutputPath>\bin</BaseOutputPath> 
+		<BaseOutputPath>C:\Dev\Fantacalcio\AllineaPrezziFantaLab\bin</BaseOutputPath> 
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ExcelManager\ExcelManager.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\" />
+	  <Folder Include="bin\Release\" />
 	</ItemGroup>
 
 </Project>

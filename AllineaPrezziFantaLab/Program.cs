@@ -15,15 +15,15 @@ namespace FantaLab
         public const string Attaccanti = "Attaccanti";
 
         public const string MioFilePath = @"C:\Dev\FantaLista\2024-2025\EG_ListoneAsta_2024-2025.xlsx";
-        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
-        //public const string Nomeprezzo = "PREZZO CARMY";
-        //public const string Nomefascia = "FASCIA CARMY";
+
+
+
+        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
+        public const string Nomeprezzo = "PREZZO CARMY";
+        public const string Nomefascia = "FASCIA CARMY";
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Lorenzo Cantarini.xlsx";
         //public const string Nomeprezzo = "PREZZO CANTARINI";
         //public const string Nomefascia = "FASCIA CANTARINI";
-        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
-        //public const string Nomeprezzo = "PREZZO PROFETA";
-        //public const string Nomefascia = "FASCIA PROFETA";
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Recosta.xlsx";
         //public const string Nomeprezzo = "PREZZO RECOSTA";
         //public const string Nomefascia = "FASCIA RECOSTA";
@@ -36,15 +36,19 @@ namespace FantaLab
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Il Profeta.xlsx";
         //public const string Nomeprezzo = "PREZZO PROFETA";
         //public const string Nomefascia = "FASCIA PROFETA";
-        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia SOS Fanta";
-        public const string Nomeprezzo = "PREZZO SOS";
-        public const string Nomefascia = "FASCIA SOS";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia SOS Fanta";
+        //public const string Nomeprezzo = "PREZZO SOS";
+        //public const string Nomefascia = "FASCIA SOS";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Luca Diddi _ Il Tattico";
+        //public const string Nomeprezzo = "PREZZO TATTICO";
+        //public const string Nomefascia = "FASCIA TATTICO";
 
 
         public static List<MappingCell> mapping = new()
         {
             new MappingCell { WritableCell = new ExcelCell { Name = "Nome" }, ReadableCell = new ReadableCell { Name = "Nome" } },
             new MappingCell { WritableCell = new ExcelCell { Name = Nomeprezzo }, ReadableCell = new ReadableCell { Name = "Prezzo", Type = "double" } },
+            new MappingCell { WritableCell = new ExcelCell { Name = "PMAFL" }, ReadableCell = new ReadableCell { Name = "PMA" } },
             new MappingCell { WritableCell = new ExcelCell { Name = Nomefascia }, ReadableCell = new ReadableCell { Name = "Fascia", ValueFormatter = slot => {
                 if(slot is null)
                 {
