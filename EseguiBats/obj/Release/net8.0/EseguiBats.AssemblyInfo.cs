@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EseguiBats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3723bb9a561f07e5ddec778939fb251b87766597")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d335967765073dac537993f6e3bb8ddba110eb46")]
 [assembly: System.Reflection.AssemblyProductAttribute("EseguiBats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EseguiBats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

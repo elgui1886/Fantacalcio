@@ -18,15 +18,15 @@ namespace FantaLab
 
 
 
-        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
-        public const string Nomeprezzo = "PREZZO CARMY";
-        public const string Nomefascia = "FASCIA CARMY";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia CarmySpecial.xlsx";
+        //public const string Nomeprezzo = "PREZZO CARMY";
+        //public const string Nomefascia = "FASCIA CARMY";
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Lorenzo Cantarini.xlsx";
         //public const string Nomeprezzo = "PREZZO CANTARINI";
         //public const string Nomefascia = "FASCIA CANTARINI";
-        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Recosta.xlsx";
-        //public const string Nomeprezzo = "PREZZO RECOSTA";
-        //public const string Nomefascia = "FASCIA RECOSTA";
+        public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Recosta.xlsx";
+        public const string Nomeprezzo = "PREZZO RECOSTA";
+        public const string Nomefascia = "FASCIA RECOSTA";
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Walk Off Sport.xlsx";
         //public const string Nomeprezzo = "PREZZO WALK";
         //public const string Nomefascia = "FASCIA WALK";
@@ -42,6 +42,9 @@ namespace FantaLab
         //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Luca Diddi _ Il Tattico";
         //public const string Nomeprezzo = "PREZZO TATTICO";
         //public const string Nomefascia = "FASCIA TATTICO";
+        //public const string FileFantaLabPath = "C:\\Users\\eliag\\Downloads\\Strategia Seriousornot";
+        //public const string Nomeprezzo = "PREZZO SERIOUS";
+        //public const string Nomefascia = "FASCIA SERIOUS";
 
 
         public static List<MappingCell> mapping = new()
